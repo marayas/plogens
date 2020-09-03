@@ -45,6 +45,7 @@ $Strings = Get-Content "shakeys.txt"
 
 $result = foreach ($String in $Strings){
 
+write-host -ForegroundColor green "Converting string $string"
 Get-StringHash  -String $string  -Algorithm MD5 
 
 }
