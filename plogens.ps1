@@ -51,3 +51,5 @@ Get-StringHash  -String $string  -Algorithm MD5
 }
 
 $result | export-csv -NoTypeInformation .\plogens.csv
+
+
