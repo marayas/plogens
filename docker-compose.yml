@@ -1,0 +1,20 @@
+---
+  version: "2.1"
+  
+  services:
+    rutorrent:
+      image: linuxserver/rutorrent:latest
+      container_name: rutorrent
+      environment:
+        - PUID=1000
+        - PGID=1000
+      volumes:
+        - /home/marayas/marayas_nfs/docker_config/rutorrentconfig:/config
+        - /home/marayas:/downloads
+      ports:
+        - 8080:80
+        - 8443:443
+        - 5000:5000
+        - 51413:51413
+        - 6881:6881/udp
+      restart: always
