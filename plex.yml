@@ -1,0 +1,16 @@
+---
+  version: "2.1"
+  
+  services:
+    plex:
+      container_name: plex
+      image: plexinc/pms-docker
+      restart: always
+      environment:
+        - TZ="America/Mexico_City"
+      network_mode: host
+      volumes:
+        - /home/pi/disk1/docker_config/plexconfig_compose:/config
+        - /home/pi/:/data
+      labels:
+        - "com.centurylinklabs.watchtower.enable=true"
